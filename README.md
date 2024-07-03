@@ -1,7 +1,8 @@
-Timeless-Tides
+#Timeless-Tides
+
 Welcome to Timeless Tides, where precision meets elegance in the world of timekeeping!
 
-Overview:
+<b>Overview:</b>
 <br>
 This innovative web project seamlessly integrates real-time updates of city-specific time, date, and captivating descriptions, offering users a glimpse into the rhythm of locations worldwide. This project has been made by consolidating all JavaScript and CSS functionalities within a singular HTML canvas for simplicity purposes.
 
@@ -15,10 +16,10 @@ Simply select a city from the dropdown menu to view its current local time and a
 
 Technologies Used:
 <br>
-
 HTML5
 JavaScript
 CSS
+
 To run Timeless Tides locally:
 <br>
 
