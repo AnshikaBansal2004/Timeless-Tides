@@ -23,7 +23,7 @@ This innovative web project seamlessly integrates real-time updates of city-spec
 
 **To run Timeless Tides locally:**
 <br>
-- This website has been hosted on Vercel, click on the following link: <a href="https://timeless-tides.vercel.app/">**TimeLess Tides**</a>
+- This website has been hosted on Vercel, click on the following link: <a href="https://timeless-tides.vercel.app/" target="_blank">**TimeLess Tides**</a>
 - Alternatively, clone this repository and open the index.html file in your web browser.
   
 **Contribution:**
