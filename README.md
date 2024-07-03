@@ -10,6 +10,7 @@ This innovative web project seamlessly integrates real-time updates of city-spec
 <br>
 
 - City-Specific Time Displays: Experience real-time updates tailored to various global locations.
+
 **How it Works:**
 <br>
 - Simply select a city from the dropdown menu to view its current local time and a brief description of the city's unique charm.
