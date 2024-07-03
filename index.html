@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css"
+            integrity="sha384-dpuaG1suU0eT09tx5plTaGMLBsfDLzUCCUXOY2j/LSvXYuG6Bqs43ALlhIqAJVRb" crossorigin="anonymous">
+
+      <title>Timeless Tides</title>
+
+      <style>
+            body {
+                  background-color: #f0f0f0;
+                  overflow-x: hidden;
+                  scroll-behavior: smooth;
+                  background-image: url('https://img.freepik.com/free-photo/big-ben-clock-tower-london-sunset-special-photographic-processing_268835-1109.jpg?t=st=1719936825~exp=1719940425~hmac=1e34c2c312f5dbe7f7f2809ea7ba74e056d07bf59bf7f6154b9be1f518455195&w=360');
+                  background-size: cover;
+                  background-position: center;
+                  background-repeat: no-repeat;
+            }
+
+
+
+            .section {
+                  height: 100vh;
+                  /* Full viewport height */
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding: 2rem;
+                  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                  background-color: #fff;
+                  /* Fallback background color */
+                  background-image: url('https://images.pexels.com/photos/2478248/pexels-photo-2478248.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+                  background-size: cover;
+                  /* Cover the entire background */
+                  background-position: center;
+                  /* Center the background */
+                  background-repeat: no-repeat;
+                  /* Do not repeat the background image */
+                  background-attachment: fixed;
+                  /* Ensures the background image remains fixed as the user scrolls */
+
+            }
+
+            .navbar-brand {
+                  font-family: 'Pacifico', cursive;
+                  font-size: 1.5rem;
+                  color: #f8f9fa;
+            }
+
+            /* .section:nth-of-type(even) {
+                  background-color: #e9ecef;
+            } */
+
+            .jumbotron {
+                  background-color: #fff;
+                  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                  padding: 2rem;
+            }
+
+            .dropdown-menu {
+                  background-color: #fff;
+                  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+                  border: none;
+                  max-height: 300px;
+                  overflow-y: auto;
+            }
+
+            .dropdown-menu a {
+                  color: #212529;
+            }
+
+            .dropdown-menu a:hover {
+                  background-color: #f8f9fa;
+            }
+
+            .nav-link {
+                  cursor: pointer;
+            }
+
+            .text-justify {
+                  text-align: justify;
+                  font-size: 1.2em;
+                  /* background-color: #e9ecef; */
+                  color: #f8efef;
+            }
+
+            .nav-link:hover {
+                  background-color: #343a40;
+                  color: #f8f9fa;
+                  transition: background-color 0.3s ease;
+            }
+
+            .dropdown-menu a:hover {
+                  background-color: #4A90E2;
+                  color: #fff;
+                  transition: background-color 0.3s ease;
+            }
+
+            .angled-box {
+                  border-radius: 10px;
+                  background-color: rgba(255, 255, 255, 0.9);
+                  padding: 2rem;
+            }
+
+            .section:nth-of-type(even) {
+                  background-color: #e9ecef;
+                  color: #ebe6e6;
+                  /* Adjust text color for better contrast */
+            }
+      </style>
+</head>
+
+<body id="body">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Timeless Tides</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                              </li>
+                              <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                          aria-expanded="false">
+                                          Select City
+                                    </a>
+                                    <ul id="cityDropdown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                          <!-- Cities will be dynamically loaded here -->
+                                    </ul>
+                              </li>
+                        </ul>
+                  </div>
+            </div>
+      </nav>
+
+      <div id="section1" class="section">
+            <div class="container">
+                  <div class="jumbotron angled-box">
+                        <h1 class="display-4">Current Time: <span id="time"></span></h1>
+                        <p class="lead">Welcome to Timeless Tides, where every second dances to the rhythm of precision
+                              and
+                              elegance.</p>
+                        <hr class="my-4">
+                        <div id="cityTime">
+                              <p>Select a city from the dropdown to see the current time and description.</p>
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div id="section2" class="section">
+            <div class="container">
+                  <h2>The past and the present, of Time!</h2>
+                  <br>
+                  <p class="text-justify">Throughout history, time measurement has evolved significantly from ancient
+                        sundials and water clocks used in civilizations like Egypt and Mesopotamia to medieval
+                        mechanical clocks
+                        that marked hours in Europe's church towers. The Industrial Revolution brought about
+                        standardized time
+                        with the introduction of railroad schedules, necessitating coordinated time zones. The 20th
+                        century saw
+                        the advent of quartz and atomic clocks, greatly enhancing timekeeping precision. Today, atomic
+                        clocks on
+                        GPS satellites define global time standards, crucial for modern navigation and communication.
+                        Digital
+                        clocks synchronized via network protocols like NTP further ensure precise timekeeping across the
+                        internet, underpinning global commerce and connectivity. These advancements highlight how
+                        technological
+                        progress in time measurement continues to shape efficiency, connectivity, and scientific
+                        exploration in
+                        our contemporary world.</p>
+            </div>
+      </div>
+
+      <div id="section3" class="section">
+            <div class="container">
+                  <div class="row align-items-center">
+                        <div class="col-md-6">
+                              <h3 class="text-justify">So, who am I?</h3>
+                              <br>
+                              <p class="text-justify">
+                                    I am a final-year Computer Science graduate at Vellore Institute of Technology,
+                                    passionate about
+                                    leveraging technology to solve real-world problems. My academic journey has been
+                                    fueled by a
+                                    strong enthusiasm for problem-solving, and an avid interest in the transformative
+                                    power of
+                                    Machine Learning. Recently, I have embarked on a journey to explore the dynamic
+                                    field of
+                                    front-end development. This website represents my first steps into creating engaging
+                                    and
+                                    user-friendly web experiences. I am constantly learning and evolving, driven by a
+                                    curiosity to
+                                    understand the intricacies of technologies and their potential to make a positive
+                                    impact.
+                              </p>
+                              <p class="text-justify">
+                                    Thank you for visiting my website, and I hope you find my projects and insights
+                                    valuable.
+                              </p>
+                              <p class="text-justify"><strong>How to reach me:</strong> <a
+                                          href="mailto:anshikabansal917@gmail.com" style="background-color: black; color: white; padding: 5px;">anshikabansal917@gmail.com</a></p>
+                              <br>
+                              <div>
+                                    <a href="https://www.linkedin.com/in/anshika-bansal-95b32021b/" target="_blank">
+                                          <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white"
+                                                alt="LinkedIn Badge" />
+                                    </a>
+                                    <a href="https://leetcode.com/u/AnshikaBansal2001/" target="_blank">
+                                          <img src="https://img.shields.io/badge/Leetcode-orange?style=for-the-badge&logo=leetcode&logoColor=white"
+                                                alt="Leetcode Badge" />
+                                    </a>
+                                    <a href="https://github.com/AnshikaBansal2004" target="_blank">
+                                          <img src="https://img.shields.io/badge/GitHub-black?style=for-the-badge&logo=github&logoColor=white"
+                                                alt="Github Badge">
+                                    </a>
+                              </div>
+                        </div>
+                        <div class="col-md-6 text-center">
+                              <img src="IMG-20240407-WA0063-EDIT.jpg" class="img-fluid rounded" alt="Anshika Bansal"
+                                    style="max-width: 100%; max-height: 400px;">
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+
+      <script>
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+            let intervalId = null;
+
+            function showTime(timezone, description) {
+                  const timeElement = document.getElementById('time');
+                  const cityTimeElement = document.getElementById('cityTime');
+                  clearInterval(intervalId);
+
+                  function updateTime() {
+                        const now = new Date();
+                        const options = { timeZone: timezone };
+                        const date = now.toLocaleDateString(undefined, options);
+                        const time = now.toLocaleTimeString('en-US', { timeZone: timezone });
+
+                        timeElement.textContent = time + ' on ' + date;
+                        cityTimeElement.innerHTML = `<p>${description}</p>`;
+                  }
+
+                  updateTime();
+                  intervalId = setInterval(updateTime, 1000);
+            }
+
+            //  cities  infromation
+            const cities = [
+                  { name: 'Delhi, India', timezone: 'Asia/Kolkata', description: 'Delhi, India: A city of contrasts, Delhi blends ancient Mughal architecture with bustling markets and is India\'s political center.' },
+                  { name: 'London, United Kingdom', timezone: 'Europe/London', description: 'London, United Kingdom: Steeped in history and royalty, London is known for its iconic landmarks like Big Ben, Buckingham Palace, and the British Museum.' },
+                  { name: 'New York, USA', timezone: 'America/New_York', description: 'New York, USA: The city that never sleeps, New York is a melting pot of cultures, famous for Broadway shows, Central Park, and towering skyscrapers.' },
+                  { name: 'Paris, France', timezone: 'Europe/Paris', description: 'Paris, France: The epitome of romance and art, Paris captivates with its iconic Eiffel Tower, Louvre Museum, and charming cafés.' },
+                  { name: 'Tokyo, Japan', timezone: 'Asia/Tokyo', description: 'Tokyo, Japan: A futuristic city with deep-rooted traditions, Tokyo dazzles with its neon-lit streets, sushi bars, and serene temples.' },
+                  { name: 'Beijing, China', timezone: 'Asia/Shanghai', description: 'Beijing, China: Home to the iconic Forbidden City, Beijing seamlessly blends ancient history with modern innovation.' },
+                  { name: 'Berlin, Germany', timezone: 'Europe/Berlin', description: 'Berlin, Germany: Known for its vibrant arts scene and historic landmarks like the Berlin Wall, this city is a cultural melting pot.' },
+                  { name: 'Buenos Aires, Argentina', timezone: 'America/Argentina/Buenos_Aires', description: 'Buenos Aires, Argentina: Famous for its passionate tango dance, Buenos Aires is also called the "Paris of South America" for its European-style architecture.' },
+                  { name: 'Cairo, Egypt', timezone: 'Africa/Cairo', description: 'Cairo, Egypt: The bustling capital on the Nile, Cairo boasts the last standing wonder of the ancient world, the Great Pyramid of Giza.' },
+                  { name: 'Dubai, United Arab Emirates', timezone: 'Asia/Dubai', description: 'Dubai, United Arab Emirates: A city of superlatives, Dubai is home to the world\'s tallest building, the Burj Khalifa, and extravagant man-made islands.' },
+                  { name: 'Istanbul, Turkey', timezone: 'Europe/Istanbul', description: 'Istanbul, Turkey: Straddling two continents, Istanbul offers a blend of East and West with its rich history as a former capital of the Roman, Byzantine, and Ottoman Empires.' },
+                  { name: 'Jakarta, Indonesia', timezone: 'Asia/Jakarta', description: 'Jakarta, Indonesia: A city of contrasts, Jakarta is both Indonesia\'s political center and a bustling metropolis known for its traffic jams and vibrant street food culture.' },
+                  { name: 'Johannesburg, South Africa', timezone: 'Africa/Johannesburg', description: 'Johannesburg, South Africa: As Africa\'s financial hub, Johannesburg is a city of gold with a rich history shaped by its mining industry.' },
+                  { name: 'Los Angeles, USA', timezone: 'America/Los_Angeles', description: 'Los Angeles, USA: The entertainment capital of the world, LA is famous for Hollywood, sunny beaches, and diverse cultural neighborhoods.' },
+                  { name: 'Mexico City, Mexico', timezone: 'America/Mexico_City', description: 'Mexico City, Mexico: One of the world\'s largest cities, Mexico City boasts ancient Aztec ruins juxtaposed with Spanish colonial architecture.' },
+                  { name: 'Mumbai, India', timezone: 'Asia/Kolkata', description: 'Mumbai, India: India\'s financial powerhouse, Mumbai is a city of dreams known for Bollywood, colonial-era architecture, and bustling street markets.' },
+                  { name: 'Moscow, Russia', timezone: 'Europe/Moscow', description: 'Moscow, Russia: The political and cultural heart of Russia, Moscow is famous for its iconic Red Square, the Kremlin, and stunning Orthodox churches.' },
+                  { name: 'Rome, Italy', timezone: 'Europe/Rome', description: 'Rome, Italy: A city steeped in history, Rome is home to ancient ruins such as the Colosseum, Vatican City, and mouthwatering Italian cuisine.' },
+                  { name: 'São Paulo, Brazil', timezone: 'America/Sao_Paulo', description: 'São Paulo, Brazil: South America\'s largest city, São Paulo is a dynamic cultural hub known for its diverse population, gourmet dining, and vibrant nightlife.' },
+                  { name: 'Seoul, South Korea', timezone: 'Asia/Seoul', description: 'Seoul, South Korea: A city where ancient tradition meets cutting-edge technology, Seoul is known for its K-pop music scene, palaces, and street food.' },
+                  { name: 'Singapore, Singapore', timezone: 'Asia/Singapore', description: 'Singapore, Singapore: A global financial hub known for its cleanliness and efficiency, Singapore dazzles with its modern architecture, shopping malls, and gardens.' },
+                  { name: 'Sydney, Australia', timezone: 'Australia/Sydney', description: 'Sydney, Australia: With its iconic Opera House and Harbour Bridge, Sydney is a vibrant city surrounded by beaches and national parks.' },
+                  { name: 'Toronto, Canada', timezone: 'America/Toronto', description: 'Toronto, Canada: Canada\'s largest city, Toronto is a cultural mosaic with diverse neighborhoods, museums, and the iconic CN Tower.' },
+                  { name: 'Vancouver, Canada', timezone: 'America/Vancouver', description: 'Vancouver, Canada: Nestled between mountains and ocean, Vancouver is known for its scenic beauty, outdoor activities, and multicultural vibe.' },
+                  { name: 'Zurich, Switzerland', timezone: 'Europe/Zurich', description: 'Zurich, Switzerland: A global financial center, Zurich blends historic charm with modern sophistication, offering scenic views of the Alps and serene lakes.' }
+
+            ];
+
+            const cityDropdown = document.getElementById('cityDropdown');
+            cities.forEach(city => {
+                  const dropdownItem = document.createElement('li');
+                  dropdownItem.classList.add('dropdown-item');
+                  const link = document.createElement('a');
+                  link.href = '#';
+                  link.textContent = city.name;
+                  link.onclick = function () {
+                        showTime(city.timezone, city.description);
+                  };
+                  dropdownItem.appendChild(link);
+                  cityDropdown.appendChild(dropdownItem);
+            });
+
+            // Function to set default time and description on page load
+            window.onload = function () {
+                  showTime('Asia/Kolkata', 'Delhi, India: A city of contrasts, Delhi blends ancient Mughal architecture with bustling markets and is India\'s political center.');
+            };
+      </script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
