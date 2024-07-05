@@ -5,6 +5,7 @@ Welcome to Timeless Tides, where precision meets elegance in the world of timeke
 <b>Overview:</b>
 <br>
 This innovative web project seamlessly integrates real-time updates of city-specific time, date, and captivating descriptions, offering users a glimpse into the rhythm of locations worldwide. This project has been made by consolidating all JavaScript and CSS functionalities within a singular HTML canvas for simplicity purposes.
+![image](https://github.com/AnshikaBansal2004/Timeless-Tides/assets/159305122/9b8b3138-128c-4059-9739-d50d31af89dd)
 
 <b>Features:</b>
 <br>
